@@ -18,10 +18,24 @@ function App() {
       updatedAt: 456, // 시간 값
     },
   ]);
+
+  const [selectedMemoIndex, setSelectedMemoIndex] = useState(0);
+
+  const setMemo = (newMemo) => {
+    const newMemos = [...memos];
+    newMemos[selectedMemoIndex] = newMemo;
+    // console.log('memos', memos);
+    setMemos(newMemos);
+  };
+
   return (
     <div className="App">
-      <SideBar memos={memos} />
-      <MemoContainer />
+      <SideBar
+        memos={memos}
+        selectedMemoIndex={selectedMemoIndex}
+        setSelectedMemoIndex={setSelectedMemoIndex}
+      />
+      <MemoContainer memo={memos[selectedMemoIndex]} setMemo={setMemo} />
     </div>
   );
 }
