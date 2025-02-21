@@ -6,6 +6,7 @@
   padding: 5px 8px;
   box-sizing: border-box;
   position: relative;
+  cursor: pointer;
 }
 
 .MemoItem.selected {

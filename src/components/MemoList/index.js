@@ -11,7 +11,7 @@ function MemoList({
       {memos.map((memo, index) => (
         <MemoItem
           key={index}
-          onClick={() => {
+          onClickItem={() => {
             setSelectedMemoIndex(index);
           }}
           isSelected={index === selectedMemoIndex}
